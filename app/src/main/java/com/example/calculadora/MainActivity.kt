@@ -137,7 +137,6 @@ fun CalculadoraApp() {
             }
 
             // Botón de Resta (Miembro 1)
-            // Botón de Resta (Miembro 1)
             Button(
                 onClick = {
                     validarEntrada()?.let { (num1, num2) ->
@@ -149,7 +148,33 @@ fun CalculadoraApp() {
                 Text(text = "-")
             }
             // Botón de Multiplicación (Miembro 2)
+            Button(
+                onClick = {
+                    validarEntrada()?.let { (num1, num2) ->
+                        resultado = multiplicar(num1, num2).toString()
+                    }
+                },
+                modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+            ) {
+                Text(text = "×")
+            }
+
             // Botón de División (Miembro 2)
+            Button(
+                onClick = {
+                    validarEntrada()?.let { (num1, num2) ->
+                        if (num2 == 0.0) {
+                            mensajeError = "No se puede dividir por cero"
+                        } else {
+                            mensajeError = ""
+                            resultado = dividir(num1, num2).toString()
+                        }
+                    }
+                },
+                modifier = Modifier.weight(1f).padding(start = 4.dp)
+            ) {
+                Text(text = "÷")
+            }
         }
 
         // Botón para limpiar
@@ -185,6 +210,13 @@ private fun restar(num1: Double, num2: Double): Double {
 }
 // Función de Resta (implementada por Miembro 1)
 // Funciones de Multiplicación (implementado por Miembro 2)
+private fun multiplicar(num1: Double, num2: Double): Double {
+    return num1 * num2
+}
+// Funciones de División (implementado por Miembro 2)
+private fun dividir(num1: Double, num2: Double): Double {
+    return num1 / num2
+}
 // Funciones de División (implementado por Miembro 2)
 
 
