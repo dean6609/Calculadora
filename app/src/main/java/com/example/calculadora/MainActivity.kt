@@ -125,7 +125,29 @@ fun CalculadoraApp() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             // Botón de Suma (Miembro 1)
+            Button(
+                onClick = {
+                    validarEntrada()?.let { (num1, num2) ->
+                        resultado = sumar(num1, num2).toString()
+                    }
+                },
+                modifier = Modifier.weight(1f).padding(end = 4.dp)
+            ) {
+                Text(text = "+")
+            }
+
             // Botón de Resta (Miembro 1)
+            // Botón de Resta (Miembro 1)
+            Button(
+                onClick = {
+                    validarEntrada()?.let { (num1, num2) ->
+                        resultado = restar(num1, num2).toString()
+                    }
+                },
+                modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+            ) {
+                Text(text = "-")
+            }
             // Botón de Multiplicación (Miembro 2)
             // Botón de División (Miembro 2)
         }
@@ -150,6 +172,17 @@ fun CalculadoraApp() {
 // Funciones para las operaciones matemáticas
 
 // Función de Suma (implementada por Miembro 1)
+
+private fun sumar(num1: Double, num2: Double): Double {
+    return num1 + num2
+}
+
+
+// Botón de Resta (Miembro 1)
+// Función de Resta (implementada por Miembro 1)
+private fun restar(num1: Double, num2: Double): Double {
+    return num1 - num2
+}
 // Función de Resta (implementada por Miembro 1)
 // Funciones de Multiplicación (implementado por Miembro 2)
 // Funciones de División (implementado por Miembro 2)
