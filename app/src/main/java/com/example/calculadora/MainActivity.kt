@@ -197,18 +197,13 @@ fun CalculadoraApp() {
 // Funciones para las operaciones matemáticas
 
 // Función de Suma (implementada por Miembro 1)
-
 private fun sumar(num1: Double, num2: Double): Double {
     return num1 + num2
 }
-
-
-// Botón de Resta (Miembro 1)
 // Función de Resta (implementada por Miembro 1)
 private fun restar(num1: Double, num2: Double): Double {
     return num1 - num2
 }
-// Función de Resta (implementada por Miembro 1)
 // Funciones de Multiplicación (implementado por Miembro 2)
 private fun multiplicar(num1: Double, num2: Double): Double {
     return num1 * num2
@@ -217,8 +212,6 @@ private fun multiplicar(num1: Double, num2: Double): Double {
 private fun dividir(num1: Double, num2: Double): Double {
     return num1 / num2
 }
-// Funciones de División (implementado por Miembro 2)
-
 
 @Preview(showBackground = true)
 @Composable
